@@ -141,6 +141,18 @@ console.log (feedDog(15, 1));
 // }
 // console.log(rockPaperScissors)(rock);
   
+const rock = 1;
+const paper = 2;
+const scissors = 3;
+function rps(you, computer) {  
+    you == 1 && computer == 1 || you == 2 && computer == 2 || you == 3 && computer == 3 ? console.log('You tied') :
+    you == 1 && computer == 2 || you == 2 && computer == 3 || you == 3 && computer == 1 ? console.log('You lose!') :
+    you == 3 && computer == 2 || you == 2 && computer == 1 || you == 1 && computer == 3 ? console.log('You win!') :
+    console.log(`OOPS, something went wrong!`)
+    }
+rps(paper,Math.floor(Math.random() * 3) )
+// first number is your choice, math.floor and second parentheses are t0 calculate the computers number
+
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -168,7 +180,7 @@ console.log(ftConverter(5))
 function annoyingSong(){
 
     for(i=99; i>0; i--){
-        console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down, pass it around. ${i-1} bottles of soda on the wall.`)
+        console.log( `${i} bottles of soda on the wall, ${i} bottles of soda, take one down, pass it around. ${i-1} bottles of soda on the wall.`)
     }
 }
 console.log(annoyingSong())
@@ -188,7 +200,8 @@ console.log(annoyingSong())
 //     if(numGrade >= 90){
 //         return "A";
 //     }
-//     else if(numGrade >= 80 && < 90){
+//     else if
+//     else if(numGrade >= 80 && <90){
 //         return "B";
 //     }
 //     else if(numGrade >= 70 && < 80){
@@ -200,8 +213,27 @@ console.log(annoyingSong())
 //     else{
 //         return "F";
 //     }    
-// }
-// console.log(gradeCalc(75))  
+// }  
+// figured out why it does not work. it is else if. so if it is above 90 it would be assigned A. if not then it goes to through each else if until gets true then it returns corresponding letter. SO:
+
+function gradeCalc(numGrade){
+    if (numGrade >= 90){
+        return `A`;
+    }
+    else if(numGrade >= 80){
+        return `B`;
+    }
+    else if(numGrade >= 70){
+        return `C`;
+    }
+    else if(numGrade >= 60){
+        return `D`;
+    }
+    else{
+        return `F`;
+    }
+}
+console.log(gradeCalc(79))  
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
